@@ -1,10 +1,8 @@
 import { useQuery } from "@tanstack/react-query";
-import { useState } from "react";
+
 import {
   type Coordinates,
   type NominatimResponse,
-  type CurrentWeather,
-  type HourlyWeather,
   type WeatherData,
 } from "../type";
 
@@ -38,7 +36,7 @@ async function fetchCoordinates(city: string): Promise<Coordinates> {
 
 async function fetchWeather(coordinates: Coordinates): Promise<WeatherData> {
     const response = await fetch(
-        `${import.meta.env.VITE_OPENMETEO_URL}/forecast?latitude=${coordinates.lat}&longitude=${coordinates.lon}&current=temperature_2m,precipitation,precipitation_probability&hourly=temperature_2m&daily=temperature_2m_max,temperature_2m_min,precipitation_sum,precipitation_probability_max&forecast_days=7&timezone=Europe/Budapest`
+        `${import.meta.env.VITE_OPENMETEO_URL}/forecast?latitude=${coordinates.lat}&longitude=${coordinates.lon}&current=temperature_2m,precipitation,precipitation_probability&hourly=temperature_2m&daily=temperature_2m_max,temperature_2m_min,precipitation_sum,precipitation_probability_max,wind_speed_10m_max&forecast_days=7&timezone=Europe/Budapest`
     )
 
     if (!response.ok) {
