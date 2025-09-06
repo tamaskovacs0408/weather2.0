@@ -2,11 +2,11 @@ import { useQuery } from "@tanstack/react-query";
 
 import {
   type Coordinates,
-  type NominatimResponse,
+  type GeoResponse,
   type WeatherData,
 } from "../type";
 
-async function searchCities(query: string): Promise<NominatimResponse[]> {
+async function searchCities(query: string): Promise<GeoResponse[]> {
   if (query.length < 1) return [];
 
   const response = await fetch(
@@ -24,7 +24,7 @@ async function searchCities(query: string): Promise<NominatimResponse[]> {
     throw new Error("Failed to search city");
   }
 
-  const data: NominatimResponse[] = await response.json();
+  const data: GeoResponse[] = await response.json();
 
   return data.filter(item => item.display_name);
 }
@@ -45,7 +45,7 @@ async function fetchCoordinates(city: string): Promise<Coordinates> {
     throw new Error("Failed to fetch coordinates");
   }
 
-  const data: NominatimResponse[] = await response.json();
+  const data: GeoResponse[] = await response.json();
 
   if (data.length === 0) {
     throw new Error("City not found");
