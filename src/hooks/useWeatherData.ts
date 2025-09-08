@@ -1,5 +1,5 @@
 import { useQuery } from "@tanstack/react-query";
-
+import waitForRateLimit from "../utils/rateLimitHelper";
 import {
   type Coordinates,
   type GeoResponse,
@@ -7,12 +7,14 @@ import {
 } from "../type";
 
 async function searchCities(query: string): Promise<GeoResponse[]> {
-  if (query.length < 1) return [];
+  if (query.length < 3) return [];
+
+  await waitForRateLimit();
 
   const response = await fetch(
     `${import.meta.env.VITE_OPENSTREETMAP_URL}${encodeURIComponent(
       query
-    )}&format=jsonv2&limit=1`,
+    )}&format=jsonv2&limit=4&addressdetails=1&accept-language=en`,
     {
       headers: {
         "User-Agent": import.meta.env.VITE_OPENSTREETMAP_USERAGENT,
@@ -30,10 +32,12 @@ async function searchCities(query: string): Promise<GeoResponse[]> {
 }
 
 async function fetchCoordinates(city: string): Promise<Coordinates> {
+  await waitForRateLimit();
+
   const response = await fetch(
     `${import.meta.env.VITE_OPENSTREETMAP_URL}${encodeURIComponent(
       city
-    )}&format=jsonv2&limit=1`,
+    )}&format=jsonv2&limit=1&addressdetails=1&accept-language=en`,
     {
       headers: {
         "User-Agent": import.meta.env.VITE_OPENSTREETMAP_USERAGENT,
@@ -78,8 +82,10 @@ export const useSearch = (searchTerm: string) => {
   return useQuery({
     queryKey: ["citySearch", searchTerm],
     queryFn: () => searchCities(searchTerm),
-    enabled: searchTerm.length >= 1,
-    staleTime: 1000 * 60 * 5,
+    enabled: searchTerm.length >= 3,
+    staleTime: 1000 * 60 * 10,
+    gcTime: 1000 * 60 * 30,
+    retry: 1,
   });
 };
 
@@ -88,7 +94,8 @@ export const useWeatherData = (city: string) => {
     queryKey: ["coordinates", city],
     queryFn: () => fetchCoordinates(city),
     enabled: !!city && city.trim().length > 0,
-    staleTime: 1000 * 60 * 60,
+    staleTime: 1000 * 60 * 60 * 24,
+    retry: 1
   });
 
   const weatherQuery = useQuery({
