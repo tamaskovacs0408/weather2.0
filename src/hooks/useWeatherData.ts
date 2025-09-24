@@ -28,7 +28,7 @@ async function searchCities(query: string): Promise<GeoResponse[]> {
 
   const data: GeoResponse[] = await response.json();
 
-  return data.filter(item => item.display_name);
+  return data.filter(item => item.name);
 }
 
 async function fetchCoordinates(city: string): Promise<Coordinates> {
@@ -58,7 +58,7 @@ async function fetchCoordinates(city: string): Promise<Coordinates> {
   return {
     lat: data[0].lat,
     lon: data[0].lon,
-    displayName: data[0].display_name,
+    displayName: data[0].name,
   };
 }
 
