@@ -2,7 +2,9 @@ import { type ReactNode } from "react";
 
 export interface AccordionProps {
   children: ReactNode;
-  title?: string;
+  date: string;
+  tempMin: number;
+  tempMax: number;
   className?: string;
   defaultOpen?: boolean;
 };
@@ -16,7 +18,7 @@ export interface Coordinates {
 export interface GeoResponse {
   lat: string;
   lon: string;
-  display_name: string;
+  name: string;
 }
 
 export interface CurrentWeather {
@@ -46,6 +48,11 @@ export interface WeatherData {
 }
 
 export interface CitySearchProps {
-  onSelect: (place: string) => void;
+  onSelect: (data: GeoResponse) => void;
   placeholder?: string;
+}
+
+export interface ForecastDayProps {
+  precipitation: number;
+  windSpeedMax: number;
 }
