@@ -32,11 +32,6 @@ export interface HourlyWeather {
   temperature_2m: number[];
 }
 
-export interface CurrentWeatherProps {
-  current: CurrentWeather;
-  hourly: HourlyWeather;
-}
-
 export interface WeatherData {
   daily: {
     time: string[];
@@ -44,6 +39,11 @@ export interface WeatherData {
     temperature_2m_min: number[];
     precipitation_sum: number[];
     wind_speed_10m_max: number[];
+  };
+  current: CurrentWeather;
+  hourly: {
+    time: string[];
+    temperature_2m: number[];
   };
 }
 
