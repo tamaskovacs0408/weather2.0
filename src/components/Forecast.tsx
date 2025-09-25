@@ -3,7 +3,13 @@ import ForecastData from "./ForecastData";
 import { useWeatherData } from "../hooks/useWeatherData";
 import { type GeoResponse } from "../type";
 
-function Forecast({ data, defaultCity = "Budapest" }: { data: GeoResponse | null; defaultCity?: string }) {
+function Forecast({
+  data,
+  defaultCity = "Budapest",
+}: {
+  data: GeoResponse | null;
+  defaultCity?: string;
+}) {
   const cityName = data?.name || defaultCity;
   const { weather: weatherData, isLoading } = useWeatherData(cityName);
 
