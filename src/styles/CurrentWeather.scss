@@ -1,0 +1,6 @@
+@use "./mixins";
+
+.current-weather-wrapper {
+    @include mixins.surface-card;
+    margin: 5rem auto 3rem auto;
+}

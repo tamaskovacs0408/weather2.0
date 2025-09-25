@@ -1,0 +1,16 @@
+.forecast-data-wrapper {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+
+    .precipitation-container,
+    .wind-container {
+        display: flex;
+        align-items: center;
+        gap: .8rem;
+
+        h3, span {
+            font-size: 1.4rem;
+        }
+    }
+}
