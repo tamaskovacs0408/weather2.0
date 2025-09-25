@@ -1,0 +1,8 @@
+@mixin surface-card {
+    border: 1px solid #e1e5e9;
+    border-radius: 0.8rem;
+    overflow: hidden;
+    background-color: #ffffff87;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    width: 90%;
+}
