@@ -31,6 +31,8 @@ function Forecast({
           <ForecastData
             precipitation={dailyData.precipitation_sum[i]}
             windSpeedMax={dailyData.wind_speed_10m_max[i]}
+            sunRise={dailyData.sunrise[i]}
+            sunSet={dailyData.sunset[i]}
           />
         </Accordion>
       ))}
