@@ -1,5 +1,7 @@
 import { type GeoResponse } from "../type";
 import { useWeatherData } from "../hooks/useWeatherData";
+import { formatDate } from "../utils/dateFormatHelper";
+import "../styles/CurrentWeather.scss";
 
 function CurrentWeather({
   data,
@@ -16,28 +18,22 @@ function CurrentWeather({
 
   const hourlyData = weatherData.hourly;
 
-  const formatDate = (fullDate: string): string => {
-    const date = new Date(fullDate);
-    return date.toLocaleTimeString("hu-HU", {
-      hour: "2-digit",
-      minute: "2-digit",
-    });
-  };
-
   return (
     <section className='current-weather-wrapper'>
       <div className='current-weather-container'>
         <h2>{cityName}</h2>
-        <p>{weatherData.current.temperature_2m} °C</p>
-        <p>{weatherData.current.precipitation_probability} %</p>
-        <p>{weatherData.current.precipitation} mm</p>
+        <div className='current-weather-data-container'>
+          <span>{weatherData.current.temperature_2m}°C</span>
+          <span>{weatherData.current.precipitation_probability} %</span>
+          <span>{weatherData.current.precipitation} mm</span>
+        </div>
       </div>
       <div className='hourly-weather-container'>
         {hourlyData.time.map((isoTime, i) => {
           return (
             <div key={isoTime} className='hourly-data'>
               <span>{formatDate(isoTime)}</span>
-              <span>{hourlyData.temperature_2m[i]}</span>
+              <span>{hourlyData.temperature_2m[i]}°C</span>
             </div>
           );
         })}
