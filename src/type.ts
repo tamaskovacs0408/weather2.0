@@ -19,6 +19,7 @@ export interface GeoResponse {
   lat: string;
   lon: string;
   name: string;
+  display_name?: string;
 }
 
 export interface CurrentWeather {
