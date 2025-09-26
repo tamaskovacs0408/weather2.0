@@ -1,6 +1,7 @@
 import React, { useState, useEffect, useRef } from "react";
 import { useSearch } from "../hooks/useWeatherData";
 import { type GeoResponse, type CitySearchProps } from "../type";
+import "../styles/CitySearch.scss"
 
 function CitySearch({
   onSelect,
@@ -90,7 +91,7 @@ function CitySearch({
                 onClick={() => handleSelect(city)}
                 onMouseEnter={() => setSelectedIndex(index)}
               >
-                {city.name}
+                {city.display_name}
               </li>
             ))}
           </ul>
