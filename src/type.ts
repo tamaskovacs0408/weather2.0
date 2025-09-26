@@ -39,6 +39,8 @@ export interface WeatherData {
     temperature_2m_min: number[];
     precipitation_sum: number[];
     wind_speed_10m_max: number[];
+    sunrise: string[];
+    sunset: string[];
   };
   current: CurrentWeather;
   hourly: {
@@ -55,4 +57,6 @@ export interface CitySearchProps {
 export interface ForecastDayProps {
   precipitation: number;
   windSpeedMax: number;
+  sunRise: string;
+  sunSet: string;
 }
