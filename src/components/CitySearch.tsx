@@ -7,11 +7,20 @@ function CitySearch({
   placeholder = "Search for a place...",
 }: CitySearchProps) {
   const [inputValue, setInputValue] = useState("");
+  const [debouncedValue, setDebouncedValue] = useState("");
   const [isOpen, setIsOpen] = useState(false);
   const [selectedIndex, setSelectedIndex] = useState(-1);
   const inputRef = useRef<HTMLInputElement>(null);
 
-  const { data: cities = [], isLoading } = useSearch(inputValue);
+  useEffect(() => {
+    const timer = setTimeout(() => {
+      setDebouncedValue(inputValue);
+    }, 1100);
+
+    return () => clearTimeout(timer);
+  }, [inputValue]);
+
+  const { data: cities = [], isLoading } = useSearch(debouncedValue);
 
   useEffect(() => {
     setIsOpen(cities.length > 0 && inputValue.length > 0);
@@ -23,10 +32,10 @@ function CitySearch({
   }
 
   function handleSelect(place: GeoResponse) {
-    const placeName = place.display_name.split(",")[0];
+    const placeName = place.name;
     setInputValue(placeName);
     setIsOpen(false);
-    onSelect(placeName);
+    onSelect(place);
   }
 
   function handleKeyDown(event: React.KeyboardEvent) {
@@ -74,14 +83,14 @@ function CitySearch({
       {isOpen && (
         <div className='autocomplete-container'>
           <ul className='keyword-list'>
-            {cities.slice(0, 4).map((city, index) => (
+            {cities.slice(0, 5).map((city, index) => (
               <li
                 className="keyword"
                 key={`${city.lat}-${city.lon}`}
                 onClick={() => handleSelect(city)}
                 onMouseEnter={() => setSelectedIndex(index)}
               >
-                {city.display_name}
+                {city.name}
               </li>
             ))}
           </ul>
