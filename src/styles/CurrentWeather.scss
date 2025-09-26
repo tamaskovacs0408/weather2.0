@@ -1,11 +1,27 @@
 @use "./mixins";
 
 .current-weather-wrapper {
-  @include mixins.surface-card;
+  @include mixins.liquid-glass-card;
   margin: 5rem auto 3rem auto;
+  color: #fff;
+  max-width: 90%;
+}
+
+.liquid-glass-filter {
+  @include mixins.liquid-glass-filter;
+}
+
+.liquid-glass-overlay {
+  @include mixins.liquid-glass-distortion-overlay;
+}
+
+.liquid-glass-specluar {
+  @include mixins.liquid-glass-specluar;
 }
 
 .current-weather-container {
+  position: relative;
+  z-index: 1;
   display: flex;
   justify-content: space-between;
   align-items: center;
@@ -22,6 +38,8 @@
 }
 
 .hourly-weather-container {
+  position: relative;
+  z-index: 1;
   display: flex;
   align-items: center;
   justify-content: space-between;
