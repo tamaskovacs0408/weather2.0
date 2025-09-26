@@ -1,7 +1,8 @@
+import { formatDate } from "../utils/dateFormatHelper";
 import { type ForecastDayProps } from "../type";
-import "./ForecastData.scss"
+import "../styles/ForecastData.scss"
 
-function ForecastData({ precipitation, windSpeedMax}: ForecastDayProps) {
+function ForecastData({ precipitation, windSpeedMax, sunRise, sunSet}: ForecastDayProps) {
     return (
         <section className="forecast-data-wrapper">
             <div className="precipitation-container">
@@ -11,6 +12,16 @@ function ForecastData({ precipitation, windSpeedMax}: ForecastDayProps) {
             <div className="wind-container">
                 <h3>Wind speed:</h3>
                 <span>{windSpeedMax} km/h</span>
+            </div>
+            <div className="solar-data-wrapper">
+                <div className="sunrise-container">
+                    <h3>Sunrise</h3>
+                    <span>{formatDate(sunRise)}</span>
+                </div>
+                <div className="sunset-container">
+                    <h3>Sunset</h3>
+                    <span>{formatDate(sunSet)}</span>
+                </div>
             </div>
         </section>
     )
