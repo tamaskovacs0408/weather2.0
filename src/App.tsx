@@ -5,6 +5,7 @@ import { ReactQueryDevtools } from "@tanstack/react-query-devtools";
 import CitySearch from "./components/CitySearch";
 import CurrentWeather from "./components/CurrentWeather";
 import Forecast from "./components/Forecast";
+import { type GeoResponse } from "./type";
 
 const queryClient = new QueryClient({
   defaultOptions: {
