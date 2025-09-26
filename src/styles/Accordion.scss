@@ -50,6 +50,10 @@
       }
     }
 
+    h2 {
+      font-size: 2rem;
+    }
+
     .temp-wrapper {
       display: flex;
       position: relative;
@@ -58,8 +62,22 @@
       font-size: 1.5rem;
       font-weight: 500;
 
+      span {
+        position: relative;
+      }
+
       span:first-child {
         color: #014b99;
+
+        &:before {
+          content: "";
+          position: absolute;
+          left: 0;
+          display: inline-block;
+          width: auto;
+          height: auto;
+          background-image: url("temp_minus.svg");
+        }
       }
       span:last-child {
         color: rgb(126, 1, 1);

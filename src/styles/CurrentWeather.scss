@@ -1,6 +1,50 @@
 @use "./mixins";
 
 .current-weather-wrapper {
-    @include mixins.surface-card;
-    margin: 5rem auto 3rem auto;
+  @include mixins.surface-card;
+  margin: 5rem auto 3rem auto;
+}
+
+.current-weather-container {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 1.2rem 1.6rem;
+
+  h2 {
+    font-size: 2.5rem;
+  }
+
+  .current-weather-data-container {
+    display: flex;
+    justify-content: space-evenly;
+  }
+}
+
+.hourly-weather-container {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 1.2rem 1.6rem;
+
+  .hourly-data {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 1rem;
+
+    span {
+      display: inline-block;
+      font-size: 1.6rem;
+
+      &:first-child {
+        font-weight: 600;
+      }
+
+      &:last-child {
+        font-weight: 500;
+      }
+    }
+  }
 }

@@ -1,16 +1,19 @@
 .forecast-data-wrapper {
-    display: flex;
-    justify-content: space-around;
-    align-items: center;
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+}
 
-    .precipitation-container,
-    .wind-container {
-        display: flex;
-        align-items: center;
-        gap: .8rem;
+.precipitation-container,
+.wind-container,
+.sunrise-container,
+.sunset-container {
+  display: flex;
+  align-items: center;
+  gap: 0.8rem;
 
-        h3, span {
-            font-size: 1.4rem;
-        }
-    }
+  h3,
+  span {
+    font-size: 1.4rem;
+  }
 }
