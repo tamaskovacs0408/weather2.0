@@ -1,6 +1,6 @@
 import { useState, useRef, useCallback } from "react";
 import { type AccordionProps } from "../type";
-import "./Accordion.scss";
+import "../styles/Accordion.scss";
 
 function Accordion({
   children,
@@ -49,7 +49,7 @@ function Accordion({
         aria-expanded={isOpen}
         aria-controls='accordion-panel'
       >
-        <h2>{date}</h2>
+        <h2>{date.replaceAll("-", ".")}</h2>
         <div className='temp-wrapper'>
           <span>{tempMin}°C</span>/<span>{tempMax}°C</span>
         </div>
