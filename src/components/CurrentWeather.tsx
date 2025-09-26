@@ -20,6 +20,9 @@ function CurrentWeather({
 
   return (
     <section className='current-weather-wrapper'>
+      <div className='liquid-glass-filter'></div>
+      <div className='liquid-glass-overlay'></div>
+      <div className='liquid-glass-specluar'></div>
       <div className='current-weather-container'>
         <h2>{cityName}</h2>
         <div className='current-weather-data-container'>
