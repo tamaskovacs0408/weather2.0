@@ -76,7 +76,7 @@ function CitySearch({
       />
 
       {isLoading && (
-        <div className='search-loading-container'>
+        <div className='loading-container'>
           <p>Loading...</p>
         </div>
       )}
