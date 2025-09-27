@@ -25,16 +25,16 @@ function CurrentWeather({
       <div className='liquid-glass-specluar'></div>
       <div className='current-weather-container'>
         <div className='current-weather-container__location'>
-          <img src='location.svg' alt='location icon' />
+          <img src='/location.svg' alt='location icon' />
           <h2>{cityName}</h2>
         </div>
         <div className='current-weather-data-container'>
           <div className='current-weather-data-container__temperature'>
-            <img src='temperature.svg' alt='temperature icon' />
+            <img src='/temperature.svg' alt='temperature icon' />
             <span>{weatherData.current.temperature_2m}°C</span>
           </div>
           <div className='current-weather-data-container__rain'>
-            <img src='rain.svg' alt='raindrops icon' />
+            <img src='/rain.svg' alt='raindrops icon' />
             <div>
               <span>{weatherData.current.precipitation_probability} %</span>
               <span>{weatherData.current.precipitation} mm</span>
