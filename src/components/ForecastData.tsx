@@ -11,19 +11,19 @@ function ForecastData({
   return (
     <section className='forecast-data-wrapper'>
       <div className='precipitation-container'>
-        <h3>Precipitation:</h3>
+        <img src="rain.svg" alt="raindrops icon" />
         <span>{precipitation} mm</span>
       </div>
       <div className='wind-container'>
-        <h3>Wind speed:</h3>
+        <img src="wind.svg" alt="wind icon" />
         <span>{windSpeedMax} km/h</span>
       </div>
       <div className='sunrise-container'>
-        <h3>Sunrise</h3>
+        <img src="sunrise.svg" alt="sunrise icon" />
         <span>{formatDate(sunRise)}</span>
       </div>
       <div className='sunset-container'>
-        <h3>Sunset</h3>
+        <img src="sunset.svg" alt="sunset icon" />
         <span>{formatDate(sunSet)}</span>
       </div>
     </section>

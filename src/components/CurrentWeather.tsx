@@ -24,11 +24,22 @@ function CurrentWeather({
       <div className='liquid-glass-overlay'></div>
       <div className='liquid-glass-specluar'></div>
       <div className='current-weather-container'>
-        <h2>{cityName}</h2>
+        <div className='current-weather-container__location'>
+          <img src='location.svg' alt='location icon' />
+          <h2>{cityName}</h2>
+        </div>
         <div className='current-weather-data-container'>
-          <span>{weatherData.current.temperature_2m}°C</span>
-          <span>{weatherData.current.precipitation_probability} %</span>
-          <span>{weatherData.current.precipitation} mm</span>
+          <div className='current-weather-data-container__temperature'>
+            <img src='temperature.svg' alt='temperature icon' />
+            <span>{weatherData.current.temperature_2m}°C</span>
+          </div>
+          <div className='current-weather-data-container__rain'>
+            <img src='rain.svg' alt='raindrops icon' />
+            <div>
+              <span>{weatherData.current.precipitation_probability} %</span>
+              <span>{weatherData.current.precipitation} mm</span>
+            </div>
+          </div>
         </div>
       </div>
       <div className='hourly-weather-container'>

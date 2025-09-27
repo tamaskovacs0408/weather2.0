@@ -51,6 +51,7 @@ function Accordion({
       >
         <h2>{date.replaceAll("-", ".")}</h2>
         <div className='temp-wrapper'>
+          <img src="temperature.svg" alt="temperature icon" />
           <span>{tempMin}°C</span>/<span>{tempMax}°C</span>
         </div>
       </button>
