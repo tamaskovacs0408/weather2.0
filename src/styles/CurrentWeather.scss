@@ -27,13 +27,41 @@
   align-items: center;
   padding: 1.2rem 1.6rem;
 
-  h2 {
-    font-size: 2.5rem;
+  &__location {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    gap: 1rem;
+
+    h2 {
+      font-size: 2.5rem;
+    }
   }
 
   .current-weather-data-container {
     display: flex;
     justify-content: space-evenly;
+    align-items: center;
+    gap: 1rem;
+    font-size: 1.8rem;
+
+    img {
+      height: 4rem;
+    }
+
+    &__temperature,
+    &__rain {
+      display: flex;
+      align-items: center;
+      gap: 1rem;
+
+      div {
+        display: flex;
+        flex-direction: column;
+        // gap: .5rem;
+      }
+    }
+
   }
 }
 

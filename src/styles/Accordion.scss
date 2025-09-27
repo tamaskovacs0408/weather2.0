@@ -23,11 +23,6 @@
     transition: background-color 0.2s ease, color 0.2s ease;
     position: relative;
     color: #fff;
-    // z-index: 1;
-
-    // &:hover {
-    //   box-shadow: inset 0px 0px 5px rgba(255, 255, 255, 0.749);
-    // }
 
     &::after {
       content: "▼";
@@ -36,7 +31,7 @@
       top: 50%;
       transform: translateY(-50%) rotate(0deg);
       transition: transform 0.2s ease;
-      font-size: 12px;
+      font-size: 1.5rem;
       color: #fff;
     }
 
@@ -55,11 +50,16 @@
 
     .temp-wrapper {
       display: flex;
+      align-items: center;
       position: relative;
       right: 3rem;
       gap: 1rem;
-      font-size: 1.5rem;
+      font-size: 1.8rem;
       font-weight: 500;
+
+      img {
+        height: 3rem;
+      }
 
       span {
         position: relative;
