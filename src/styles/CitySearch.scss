@@ -17,6 +17,10 @@
         outline: none;
         border: none;
 
+        @media (max-width: 768px) {
+            width: 80%;
+        }
+
         &:focus {
             outline: none;
             border: none;

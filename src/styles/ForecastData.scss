@@ -3,6 +3,14 @@
   justify-content: space-around;
   align-items: center;
   color: #fff;
+
+  @media (max-width: 768px) {
+    justify-content: space-between;
+  }
+
+  @media (max-width: 600px) {
+    flex-wrap: wrap;
+  }
 }
 
 .precipitation-container,
@@ -19,5 +27,15 @@
 
   span {
     font-size: 1.8rem;
+
+    @media (max-width: 768px) {
+      font-size: 1.6rem;
+    }
+  }
+
+  @media (max-width: 600px) {
+    justify-content: center;
+    width: 50%;
+    margin-top: 1rem;
   }
 }

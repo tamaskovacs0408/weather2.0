@@ -27,11 +27,19 @@
   align-items: center;
   padding: 1.2rem 1.6rem;
 
+  @media (max-width: 575px) {
+    flex-direction: column;
+  }
+
   &__location {
     display: flex;
     flex-direction: row;
     align-items: center;
     gap: 1rem;
+
+    @media (max-width: 575px) {
+      width: 100%;
+    }
 
     h2 {
       font-size: 2.5rem;
@@ -44,6 +52,15 @@
     align-items: center;
     gap: 1rem;
     font-size: 1.8rem;
+
+    @media (max-width: 768px) {
+      font-size: 1.6rem;
+    }
+
+    @media (max-width: 575px) {
+      width: 100%;
+      justify-content: space-between;
+    }
 
     img {
       height: 4rem;
@@ -79,6 +96,15 @@
     justify-content: center;
     align-items: center;
     gap: 1rem;
+    font-size: 1.6rem;
+
+    @media (max-width: 768px) {
+      font-size: 1.4rem;
+    }
+
+    @media (max-width: 425px) {
+      font-size: 1.2rem;
+    }
 
     span {
       display: inline-block;

@@ -57,6 +57,10 @@
       font-size: 1.8rem;
       font-weight: 500;
 
+      @media (max-width: 375px) {
+        gap: 0;
+      }
+
       img {
         height: 3rem;
       }
@@ -64,6 +68,10 @@
       span {
         position: relative;
         color: #fff;
+      }
+
+      @media (max-width: 768px) {
+        font-size: 1.6rem;
       }
     }
   }
