@@ -14,7 +14,7 @@ function CurrentWeather({
   const { weather: weatherData, isLoading } = useWeatherData(cityName);
 
   if (isLoading) return <div className='loading-container'>Loading...</div>;
-  if (!weatherData) return <div className='error-container'>No data</div>;
+  if (!weatherData) return <div className='error-container'>No data for current weather...</div>;
 
   const hourlyData = weatherData.hourly;
 
