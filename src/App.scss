@@ -1,8 +1,58 @@
 main {
-    height: 100%;
-    background-image: url("/weather_bg.svg");
-    background-size: cover;
-    background-position: center;
-    background-attachment: fixed;
-    padding: 1.5rem;
+  width: 100%;
+  min-height: 100vh;
+  min-height: 100dvh;
+  min-height: -webkit-fill-available;
+
+  background-size: cover;
+  background-position: center;
+
+  background-attachment: fixed;
+  background-repeat: no-repeat;
+
+  padding: 1.5rem;
+
+  position: relative;
+  overflow: hidden;
+
+  &.day {
+    background: linear-gradient(rgba(0, 0, 0, 0.2), rgba(0, 0, 0, 0.2)),
+      url("/weather_bg.svg");
+  }
+
+  &.night {
+    background: linear-gradient(rgba(0, 0, 0, 0.2), rgba(0, 0, 0, 0.2)),
+      url("/weather_bg_night.svg");
+  }
+}
+
+@supports (-webkit-touch-callout: none) {
+  main {
+    background-attachment: scroll;
+
+    &::before {
+      content: "";
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background: linear-gradient(rgba(0, 0, 0, 0.2), rgba(0, 0, 0, 0.2)),
+        url("/weather_bg.svg");
+      background-size: cover;
+      background-position: center;
+      background-repeat: no-repeat;
+      z-index: -1;
+      will-change: transform;
+    }
+  }
+}
+
+@supports (padding: max(0px)) {
+  main {
+    padding: max(1.5rem, env(safe-area-inset-top))
+      max(1.5rem, env(safe-area-inset-right))
+      max(1.5rem, env(safe-area-inset-bottom))
+      max(1.5rem, env(safe-area-inset-left));
+  }
 }
