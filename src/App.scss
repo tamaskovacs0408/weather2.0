@@ -19,12 +19,24 @@ main {
     background: linear-gradient(rgba(0, 0, 0, 0.2), rgba(0, 0, 0, 0.2)),
       url("/weather_bg.svg");
     background-repeat: no-repeat;
+
+    @media (min-width: 769px) {
+      background-size: cover;
+      background-position: center;
+      background-attachment: fixed;
+    }
   }
 
   &.night {
     background: linear-gradient(rgba(0, 0, 0, 0.2), rgba(0, 0, 0, 0.2)),
       url("/weather_bg_night.svg");
-    background-repeat: no-repeat;  
+    background-repeat: no-repeat;
+    
+    @media (min-width: 769px) {
+      background-size: cover;
+      background-position: center;
+      background-attachment: fixed;
+    }
   }
 }
 
