@@ -18,11 +18,13 @@ main {
   &.day {
     background: linear-gradient(rgba(0, 0, 0, 0.2), rgba(0, 0, 0, 0.2)),
       url("/weather_bg.svg");
+    background-repeat: no-repeat;
   }
 
   &.night {
     background: linear-gradient(rgba(0, 0, 0, 0.2), rgba(0, 0, 0, 0.2)),
       url("/weather_bg_night.svg");
+    background-repeat: no-repeat;  
   }
 }
 
