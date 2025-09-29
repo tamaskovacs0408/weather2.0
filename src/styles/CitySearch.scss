@@ -1,9 +1,17 @@
 .search-wrapper {
     display: flex;
+    flex-direction: column;
     justify-content: center;
     align-items: center;
     position: relative;
     width: 100%;
+
+    .loading-container {
+        min-height: unset;
+        height: 20%;
+        position: absolute;
+        top: 100%;
+    }
 
     input {
         display: inline-block;
