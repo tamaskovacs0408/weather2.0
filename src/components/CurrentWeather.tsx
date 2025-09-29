@@ -37,7 +37,6 @@ function CurrentWeather({
             <img src='/rain.svg' alt='raindrops icon' />
             <div>
               <span>{weatherData.current.precipitation_probability} %</span>
-              <span>{weatherData.current.precipitation} mm</span>
             </div>
           </div>
         </div>
