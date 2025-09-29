@@ -3,7 +3,6 @@
 .current-weather-wrapper {
   @include mixins.liquid-glass-card;
   margin: 5rem auto 3rem auto;
-  color: #fff;
   max-width: 90%;
 }
 

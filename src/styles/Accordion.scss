@@ -22,7 +22,6 @@
     cursor: pointer;
     transition: all 0.2s ease;
     position: relative;
-    color: #fff;
 
     &::after {
       content: "▼";
@@ -32,12 +31,10 @@
       transform: translateY(-50%) rotate(0deg);
       transition: transform 0.2s ease;
       font-size: 1.5rem;
-      color: #fff;
     }
 
     &--open {
       background: radial-gradient(circle at 20% 30%, rgba(255, 255, 255, 0.15) 0%, transparent 80%), radial-gradient(circle at 80% 70%, rgba(255, 255, 255, 0.15) 0%, transparent 80%);
-      color: #fff;
       background: transparent;
 
       &::after {
@@ -80,7 +77,6 @@
 
       span {
         position: relative;
-        color: #fff;
       }
 
       @media (max-width: 768px) {
