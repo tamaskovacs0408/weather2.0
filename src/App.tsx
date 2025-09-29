@@ -25,20 +25,29 @@ declare global {
 }
 
 function App() {
-  const [isNight, setIsNight] = useState(false);
+  const [timeOfDay, setTimeOfDay] = useState<'sunrise' | 'day' | 'sunset' | 'night'>('day')
   const [geoData, setGeoData] = useState<GeoResponse | null>(null);
   function handleCitySelect(data: GeoResponse) {
     setGeoData(data);
   }
 
   useEffect(() => {
-    const hour = new Date().getHours();
-    setIsNight(hour >= 18 || hour < 6)
-  },[])
+  const hour = new Date().getHours()
+
+  if (hour >= 6 && hour < 10) {
+    setTimeOfDay('sunrise')
+  } else if (hour >= 10 && hour < 18) {
+    setTimeOfDay('day')
+  } else if (hour >= 18 && hour < 21) {
+    setTimeOfDay('sunset')
+  } else {
+    setTimeOfDay('night')
+  }
+}, [])
 
   return (
     <QueryClientProvider client={queryClient}>
-      <main className={isNight ? 'night' : 'day'}>
+      <main className={timeOfDay}>
         <CitySearch onSelect={handleCitySelect} />
         <CurrentWeather data={geoData} defaultCity='Budapest' />
         <Forecast data={geoData} defaultCity='Budapest' />
