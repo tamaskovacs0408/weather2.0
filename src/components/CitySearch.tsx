@@ -1,7 +1,7 @@
 import React, { useState, useEffect, useRef } from "react";
 import { useSearch } from "../hooks/useWeatherData";
 import { type GeoResponse, type CitySearchProps } from "../type";
-import "../styles/CitySearch.scss"
+import "../styles/CitySearch.scss";
 
 function CitySearch({
   onSelect,
@@ -75,18 +75,14 @@ function CitySearch({
         placeholder={placeholder}
       />
 
-      {isLoading && (
-        <div className='loading-container'>
-          <p>Loading...</p>
-        </div>
-      )}
+      {isLoading && <div className='loading-container'>Loading...</div>}
 
       {isOpen && (
         <div className='autocomplete-container'>
           <ul className='keyword-list'>
             {cities.slice(0, 5).map((city, index) => (
               <li
-                className="keyword"
+                className='keyword'
                 key={`${city.lat}-${city.lon}`}
                 onClick={() => handleSelect(city)}
                 onMouseEnter={() => setSelectedIndex(index)}
