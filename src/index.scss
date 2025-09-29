@@ -35,6 +35,11 @@ body {
     overflow-x: hidden;
 }
 
+button {
+  cursor: pointer;
+  color: inherit;
+}
+
 .error-container,
 .loading-container {
     display: flex;
