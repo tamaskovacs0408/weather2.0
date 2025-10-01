@@ -26,7 +26,7 @@ main {
   }
 
   &.night {
-    background: linear-gradient(135deg, #141e30, #243b55);
+    background: linear-gradient(110deg, #0c131e, #2c4767);
     @include mixins.night-color;
   }
 }
