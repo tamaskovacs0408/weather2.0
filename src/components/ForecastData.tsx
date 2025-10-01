@@ -12,7 +12,7 @@ function ForecastData({
     <section className='forecast-data-wrapper'>
       <div className='precipitation-container'>
         <img src="/rain.svg" alt="raindrops icon" />
-        <span>{precipitation} mm</span>
+        <span>{precipitation} %</span>
       </div>
       <div className='wind-container'>
         <img src="/wind.svg" alt="wind icon" />

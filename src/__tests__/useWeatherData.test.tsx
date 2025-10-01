@@ -121,7 +121,7 @@ describe("useWeatherData hooks", () => {
         time: ["2024-01-01"],
         temperature_2m_max: [15],
         temperature_2m_min: [5],
-        precipitation_sum: [1],
+        precipitation_probability_mean: [1],
         wind_speed_10m_max: [15],
         sunrise: ["2024-01-01T07:00"],
         sunset: ["2024-01-01T16:00"],
@@ -154,7 +154,7 @@ describe("useWeatherData hooks", () => {
 
     expect(fetchMock).toHaveBeenNthCalledWith(
       2,
-      "https://openmeteo.test/forecast?latitude=47.4979&longitude=19.0402&current=temperature_2m,precipitation,precipitation_probability&hourly=temperature_2m&forecast_hours=5&daily=temperature_2m_max,temperature_2m_min,precipitation_sum,precipitation_probability_max,wind_speed_10m_max,sunrise,sunset&forecast_days=7&timezone=Europe/Budapest"
+      "https://openmeteo.test/forecast?latitude=47.4979&longitude=19.0402&current=temperature_2m,precipitation,precipitation_probability&hourly=temperature_2m&forecast_hours=5&daily=temperature_2m_max,temperature_2m_min,precipitation_probability_mean,wind_speed_10m_max,sunrise,sunset&forecast_days=7&timezone=Europe/Budapest"
     );
 
     expect(result.current.coordinates).toEqual({

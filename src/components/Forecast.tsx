@@ -29,7 +29,7 @@ function Forecast({
           className='accordion--compact'
         >
           <ForecastData
-            precipitation={dailyData.precipitation_sum[i]}
+            precipitation={dailyData.precipitation_probability_mean[i]}
             windSpeedMax={dailyData.wind_speed_10m_max[i]}
             sunRise={dailyData.sunrise[i]}
             sunSet={dailyData.sunset[i]}

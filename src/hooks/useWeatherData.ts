@@ -68,7 +68,7 @@ async function fetchWeather(coordinates: Coordinates): Promise<WeatherData> {
       coordinates.lat
     }&longitude=${
       coordinates.lon
-    }&current=temperature_2m,precipitation,precipitation_probability&hourly=temperature_2m&forecast_hours=5&daily=temperature_2m_max,temperature_2m_min,precipitation_sum,precipitation_probability_max,wind_speed_10m_max,sunrise,sunset&forecast_days=7&timezone=Europe/Budapest`
+    }&current=temperature_2m,precipitation,precipitation_probability&hourly=temperature_2m&forecast_hours=5&daily=temperature_2m_max,temperature_2m_min,precipitation_probability_mean,wind_speed_10m_max,sunrise,sunset&forecast_days=7&timezone=Europe/Budapest`
   );
 
   if (!response.ok) {

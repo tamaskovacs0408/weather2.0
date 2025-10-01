@@ -38,7 +38,7 @@ export interface WeatherData {
     time: string[];
     temperature_2m_max: number[];
     temperature_2m_min: number[];
-    precipitation_sum: number[];
+    precipitation_probability_mean: number[];
     wind_speed_10m_max: number[];
     sunrise: string[];
     sunset: string[];
